@@ -3,7 +3,7 @@
     using System;
     using Interfaces;
 
-    public class WriterProvider : IWriter
+    public class WriterProvider : IWriterProvider
     {
         public void Write(string message)
         {

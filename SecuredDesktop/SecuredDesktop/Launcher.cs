@@ -1,12 +1,8 @@
-﻿using System;
-using System.Threading;
-using System.Windows.Forms;
-using SecuredDesktop.Core.Interfaces;
-using SecuredDesktop.Core.Providers;
-
-namespace SecuredDesktop
+﻿namespace SecuredDesktop
 {
     using Core;
+    using Core.Providers;
+    using Core.Providers.ClipBoardProvider;
 
     class Launcher
     {
@@ -14,7 +10,8 @@ namespace SecuredDesktop
         {
             Engine.Instance(
                 new WriterProvider(),
-                new PasswordReceiver())
+                new PasswordReceiver(),
+                new ClipboardProvider())
                 .Start();
         }
     }

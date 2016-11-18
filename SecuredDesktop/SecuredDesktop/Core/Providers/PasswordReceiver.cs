@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SecuredDesktop.Core.Interfaces;
-
-namespace SecuredDesktop.Core.Providers
+﻿namespace SecuredDesktop.Core.Providers
 {
+    using System;
+    using System.Drawing;
+    using System.Runtime.InteropServices;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using Enums;
+    using Interfaces;
+
     class PasswordReceiver : IPasswordReceiver
     {
         [DllImport("user32.dll")]
@@ -40,10 +38,10 @@ namespace SecuredDesktop.Core.Providers
 
             string passwd = "";
 
-            // running on a different thread, this way SetThreadDesktop won't fail
+            //running on a different thread, this way SetThreadDesktop won't fail
             Task.Factory.StartNew(() =>
             {
-                // assigning the new desktop to this thread - so the Form will be shown in the new desktop)
+                //assigning the new desktop to this thread - so the Form will be shown in the new desktop
                 SetThreadDesktop(newDesktop);
 
                 Form secureWindow = new Form();

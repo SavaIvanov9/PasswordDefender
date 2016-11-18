@@ -1,4 +1,4 @@
-﻿namespace SecuredDesktop.Core
+﻿namespace SecuredDesktop.Core.Providers.ClipBoardProvider
 {
     using System;
     using System.Threading;
@@ -7,7 +7,7 @@
     {
         readonly ManualResetEvent _complete = new ManualResetEvent(false);
 
-        public void Start()
+        protected void Start()
         {
             var thread = new Thread(new ThreadStart(DoWork))
             {
