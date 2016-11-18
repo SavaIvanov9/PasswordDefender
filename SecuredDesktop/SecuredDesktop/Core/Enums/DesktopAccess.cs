@@ -15,6 +15,6 @@
 
         GenericAll = (DesktopReadObjects | DesktopCreateWindow | DesktopCreatemenu |
                         DesktopHookControl | DesktopJournalRecord | DesktopJournalPlayback |
-                        DesktopEnumerate | DesktopWriteObjects | DesktopSwitchDesktop),
+                        DesktopEnumerate | DesktopWriteObjects | DesktopSwitchDesktop)
     }
 }

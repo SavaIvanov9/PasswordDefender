@@ -3,7 +3,7 @@
     using System;
     using System.Threading;
 
-    abstract class StaHelper
+    public abstract class StaHelper
     {
         readonly ManualResetEvent _complete = new ManualResetEvent(false);
 

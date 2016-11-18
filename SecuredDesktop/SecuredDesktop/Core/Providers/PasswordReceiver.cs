@@ -44,13 +44,17 @@
                 //assigning the new desktop to this thread - so the Form will be shown in the new desktop
                 SetThreadDesktop(newDesktop);
 
-                Form secureWindow = new Form();
-                secureWindow.Text = "Secured text";
+                Form secureWindow = new Form
+                {
+                    Text = "Secured text"
+                };
 
-                TextBox passwordTextBox = new TextBox();
-                passwordTextBox.Location = new Point(10, 30);
-                passwordTextBox.Width = 250;
-                passwordTextBox.Font = new Font("Arial", 20, FontStyle.Regular);
+                TextBox passwordTextBox = new TextBox
+                {
+                    Location = new Point(10, 30),
+                    Width = 250,
+                    Font = new Font("Arial", 20, FontStyle.Regular)
+                };
 
                 secureWindow.Controls.Add(passwordTextBox);
                 secureWindow.FormClosing += (sender, e) =>

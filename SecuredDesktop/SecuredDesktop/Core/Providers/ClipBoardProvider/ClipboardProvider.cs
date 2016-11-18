@@ -3,7 +3,7 @@
     using System.Windows.Forms;
     using Interfaces;
 
-    class ClipboardProvider : StaHelper, IClipboardProvider
+    public class ClipboardProvider : StaHelper, IClipboardProvider
     {
         private string _format;
         private object _data;
